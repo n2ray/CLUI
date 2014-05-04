@@ -10,7 +10,7 @@
 			{{#if @blog.logo}}
 			<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
 			{{else}}
-			<a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}} {{@blog.description}}</a>
+			<a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}} <small>{{@blog.description}}</small></a>
 			{{/if}}
 		</div>
 		<p class="navbar-text navbar-right navbar-text-home hide">
