@@ -38,7 +38,7 @@
 		$titleHolder = this.find('.post-title a'),
 		postCoverImg = this.find('img[alt="post-cover-img"]'),
 		postCoverIcon = this.find('i[class="post-cover-icon"]'),
-		postCoverIconName = (postCoverIcon.attr('data-icon') != null) ? postCoverIcon.attr('data-icon') : 'bookmark',
+		postCoverIconName = (postCoverIcon.attr('data-icon') != null) ? postCoverIcon.attr('data-icon') : 'fa-bookmark',
 		postCoverIconColor = (postCoverIcon.attr('data-color') != null) ? postCoverIcon.attr('data-color') : '',
 		postCoverIconBgColor = (postCoverIcon.attr('data-bg-color') != null) ? postCoverIcon.attr('data-bg-color') : '#E6E6E6';
 		
