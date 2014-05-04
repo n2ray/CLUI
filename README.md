@@ -4,15 +4,19 @@ A theme for [Ghost](http://github.com/tryghost/ghost/).
 
 ## Credits
 This theme build with:  
-1 [Bootstrap](http://getbootstrap.com)  
-2 [Font Awesome](http://fontawesome.io)  
-3 [jscroll](http://jscroll.com)  
-4 [colorbox](http://www.jacklmoore.com/colorbox/)  
-5 [CSS Browser Selector](http://rafael.adm.br/css_browser_selector)  
+1. [Bootstrap](http://getbootstrap.com)  
+2. [Font Awesome](http://fontawesome.io)  
+3. [jscroll](http://jscroll.com)  
+4. [colorbox](http://www.jacklmoore.com/colorbox/)  
+5. [CSS Browser Selector](http://rafael.adm.br/css_browser_selector)  
   
 You can review the theme live [here](http://cailei.net:3333)
 
-## How to
+## How to install
+1. Navigate to your Ghost theme directory ghost/content/themes
+2. Clone theme repo using below command <br> `git clone https://github.com/n2ray/CLUI.git "clui"`
+3. Restart ghost
+4. On settings page, select "clui" as theme and save.
 
 ## Copyright & License
 
