@@ -90,7 +90,6 @@
 					$(this).insertAfter($(this).parent().parent().siblings().filter('article').last());
 					$(this).find('div.atcl-pic h4').css({'width':$(this).width()+12+'px'});
 				});
-				$('.jscroll-loading').remove();
 			}
 		});
 	
@@ -107,5 +106,6 @@
 			});
 		}
 	
+		$('.jscroll-loading').remove();
 	});
 })( jQuery );
