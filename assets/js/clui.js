@@ -78,9 +78,9 @@
 			$(this).cluiPostCover();
 		});
 	
-		// jscroll, http://jscroll.com
+		// jscroll
 		$('.main-content .posts-holder').jscroll({
-			loadingHtml: '<div class="col-md-12 text-center" style="padding:12px 0"><i class="fa fa-cog fa-spin fa-lg"></i></div>',
+			loadingHtml: '<div class="col-md-12 text-center jscroll-loading" style="padding:12px 0"><i class="fa fa-cog fa-spin fa-lg"></i></div>',
 			nextSelector: 'a.older-posts',
 			contentSelector: 'div.posts-holder',
 			callback: function(){
@@ -90,11 +90,12 @@
 					$(this).insertAfter($(this).parent().parent().siblings().filter('article').last());
 					$(this).find('div.atcl-pic h4').css({'width':$(this).width()+12+'px'});
 				});
+				$('.jscroll-loading').remove();
 			}
 		});
 	
 		// build gallery in post
-		// Lightbox with colorbox, http://www.jacklmoore.com/colorbox/
+		// Lightbox with colorbox
 		if($('.clui-gallery').length > 0){
 			$('.clui-gallery').each(function(){
 				var $box = $(this);
