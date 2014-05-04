@@ -1,0 +1,273 @@
+/* ==========================================================================
+   0. Includes - Ground zero
+   ========================================================================== */
+
+@import url(normalize.css);
+
+/* ==========================================================================
+   1. Icons - Sets up the icon font and respective classes
+   ========================================================================== */
+
+/* Import the font file with the icons in it */
+@font-face {
+    font-family: 'icons';
+    src:url('../fonts/icons.eot');
+    src:url('../fonts/icons.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/icons.woff') format('woff'),
+        url('../fonts/icons.ttf') format('truetype'),
+        url('../fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply these base styles to all icons */
+.icon-ghost, .icon-feed, .icon-twitter, .icon-google-plus, .icon-facebook {
+    font-family: 'icons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    text-decoration: none;
+}
+
+/* Each icon is created by inserting the corret character into the 
+   content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+    content: "\e000";
+}
+.icon-feed:before {
+    content: "\e001";
+}
+.icon-twitter:before {
+    content: "\e002";
+    font-size: 1.1em;
+}
+.icon-google-plus:before {
+    content: "\e003";
+}
+.icon-facebook:before {
+    content: "\e004";
+}
+
+/* ==========================================================================
+   Clui css
+   ========================================================================== */
+body {
+	padding-bottom: 40px;
+	background-color: #F9F9F9;
+	color: #1F2428;
+}
+
+article h1, article .h1 {
+	font-size: 34px;
+}
+
+a {
+	color: #1F2428;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+a[href] {
+	color: #408AD2;
+}
+
+a[href]:hover {
+	text-decoration: none;
+	color: #04396C;
+}
+
+code, pre code {
+	color: #679ED2;
+	background-color: #F5F5F5;
+}
+
+.container {
+	max-width: 700px;
+}
+
+/* navbar setting */
+.navbar {
+	background-color: #E6E6E6;
+	border-color: #E6E6E6;
+	border-color: none;
+	border-radius: 0;
+	border: 0px solid;
+}
+
+.navbar .navbar-header img {
+	height: 23px;
+}
+
+.navbar .navbar-text-home {
+	margin-top: 20px;
+}
+
+/* posts */
+.post {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+h1.post-title {
+	border-bottom: 1px solid #e6e6e6;
+	padding: 0 0 20px 0;
+}
+
+h1.post-title a, .post-footer .share a {
+	color: #888888;
+}
+
+h1.post-title a:hover, .post-footer .share a:hover {
+	color: #000000;
+}
+
+/* Keep large images within the bounds of the post-width */
+.post-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.post-header .post-meta .post-tag {
+	background: #E6E6E6;
+	padding: 6px 10px 8px 10px;
+	border-radius: 4px 4px 0 0;
+	font-size: 86%;
+	color: #666666;
+	line-height: 22px;
+}
+
+.post .post-content {
+	margin-bottom: 60px;
+}
+
+.atcl-pic {
+	width: 100%;
+	height: 220px;
+	position: relative;
+	margin-bottom: 20px;
+	box-shadow: inset 0 1px 4px #ccc;
+}
+
+.atcl-pic .atcl-pic-holder {
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #ccc;
+}
+
+.atcl-pic .post-title {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 0;
+	background: #13181E;
+	opacity: 0.89;
+	padding: 10px 12px;
+	width: －webkit-calc(100% + 12px);
+	width: calc(100% + 12px);
+	margin-left: -6px;
+	-webkit-box-shadow: 0 12px 12px -10px #000;
+	   -moz-box-shadow: 0 12px 12px -10px #000;
+	        box-shadow: 0 12px 12px -10px #000;
+			text-align: center;
+}
+
+.atcl-pic .post-title a {
+	color: #E6E6E6;
+	font-size: 0.9em;
+}
+
+.atcl-pic .post-title a:hover {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.atcl-pic .post-title .post-title-bgl,
+.atcl-pic .post-title .post-title-bgr {
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	top: -16px;
+	-webkit-margin-collapse: separate;
+}
+
+.atcl-pic .post-title .post-title-bgl {
+	left: 0;
+}
+
+.atcl-pic .post-title .post-title-bgr {
+	right: 0;
+}
+
+.atcl-pic .post-title .post-title-bgl img,
+.atcl-pic .post-title .post-title-bgr img {
+	width: 6px;
+	height: 6px;
+	opacity: .86;
+}
+
+/* Post Gallery */
+.clui-gallery {
+	margin-bottom: 20px;
+}
+.clui-gallery .clui-gallery-img:hover {
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
+}
+
+
+/* Footer */
+footer.container,
+footer.container a {
+	color: #666666;
+}
+
+footer.container .inner {
+	padding-top: 12px;
+	border-top: 1px solid #DDDDDD;
+}
+
+/* Chrome fix */
+.chrome .atcl-pic .post-title .post-title-bgl {
+	top: -14px;
+}
+
+.chrome .atcl-pic .post-title .post-title-bgr {
+	top: -14px;
+}
+
+/* colorBox fix */
+#cboxCurrent {
+	bottom: -2px;
+}
+
+.img-blur {
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+
+/* Ghost CSS */
+.poweredby .icon-ghost {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.poweredby .icon-ghost:hover {
+    text-decoration: none;
+}
+
+.poweredby .icon-ghost:before {
+    font-size: 1rem;
+    margin-right: 0.2em;
+}
