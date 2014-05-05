@@ -101,6 +101,10 @@ code, pre code {
 	border: 0px solid;
 }
 
+.navbar .navbar-header {
+	margin: 20px 0 10px 0;
+}
+
 .navbar .navbar-header img {
 	height: 23px;
 }
