@@ -115,6 +115,10 @@ code, pre code {
 	margin-bottom: 20px;
 }
 
+.post h1 {
+    font-size: 44px;
+}
+
 h1.post-title {
 	border-bottom: 1px solid #e6e6e6;
 	padding: 0 0 20px 0;
