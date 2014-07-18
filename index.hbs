@@ -1,19 +1,26 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
+{{#if @blog.cover}}
+	<style type="text/css">
+		body {
+			padding-top: 222px;
+		}
+	</style>
+{{/if}}
 
 {{! Navbar for homepage }}
-<nav class="navbar navbar-default" role="navigation" style="background:url({{@blog.cover}}) no-repeat top center">
+<nav class="navbar navbar-default {{#if @blog.cover}}navbar-with-cover{{/if}}" role="navigation" {{#if @blog.cover}}style="background:url({{@blog.url}}{{@blog.cover}})"{{/if}}>
 	<div class="container">
 		<div class="navbar-header">
-			{{#if @blog.logo}}
-			<a class="navbar-brand" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
-			{{else}}
-			<a class="navbar-brand" href="{{@blog.url}}">{{@blog.title}} <small>{{@blog.description}}</small></a>
-			{{/if}}
+			<a class="navbar-brand" href="{{@blog.url}}">
+				{{#if @blog.logo}}
+					<img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+				{{else}}
+					{{@blog.title}} <small>{{@blog.description}}</small>
+				{{/if}}
+			</a>
 		</div>
-		<p class="navbar-text navbar-right navbar-text-home hide">
+		<p class="navbar-text navbar-right navbar-text-home hidden-xs">
 			<a href="{{@blog.url}}/rss/"><i class="fa fa-rss"></i></a>
 		</p>
 	</div>
@@ -22,31 +29,30 @@
 {{! The main content area on the homepage }}
 <div class="container main-content" role="main">
 	<div class="row posts-holder">
-	{{! Each post will be output using this markup }}
-    {{#foreach posts}}
-    <article class="{{post_class}} col-md-4 col-sm-4 col-xs-12">
-        <header class="post-header">
-            <div class="post-meta">
-				{{#if tags}}{{tags}}{{else}}<a>/</a>{{/if}}
-				<a class="pull-right hide"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></a>
-			</div>
-            <div class="atcl-pic">
-				<h4 class="post-title">
-					<a href="{{url}}">{{{title}}}</a>
-					<div class="post-title-bgl"><img src="/assets/css/images/post-title-bgl.png"></div>
-					<div class="post-title-bgr"><img src="/assets/css/images/post-title-bgr.png"></div>
-				</h4>
-			</div>
-        </header>
-        <section class="post-excerpt hide" itemprop="description">
-            {{content words="100"}}
-        </section>
-    </article>
-    {{/foreach}}
 	
-    {{!! After all the posts, we have the previous/next pagination links }}
-    <div class="col-md-12 hide">{{pagination}}</div>
+		{{#foreach posts}}
+			<article class="{{post_class}} clui-post-list col-sm-4 col-xs-12">
+				<header class="post-header">
+					<div class="post-meta">
+						<a class="post-date">{{date published_at format="DD. MMM YYYY"}}</a>
+					</div>
+					<div class="atcl-pic">
+						<h4 class="post-title">
+							<a href="{{url}}">{{{title}}}</a>
+						</h4>
+					</div>
+				</header>
+				<section class="post-cover-preholder hide">
+					{{content words="0"}}
+				</section>
+				{{#if tags}}
+					<section class="post-tag"><i class="fa fa-tag"></i> {{tags separator=" "}}</section>
+				{{/if}}
+			</article>
+		{{/foreach}}
+	
+		{{!! pagination links }}
+		<div class="col-md-12 hide">{{pagination}}</div>
 	
 	</div>
-	
 </div>

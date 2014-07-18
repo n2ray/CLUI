@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{! Document Settings }}
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-    {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
-
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="MobileOptimized" content="320" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-	<script type="text/javascript" src="/assets/js/css_browser_selector.js"></script>
-
-    {{! Styles'n'Scripts <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />}}
-    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="/assets/css/colorbox.css" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/clui.css" />
-
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+	<meta charset="utf-8">
+	<meta name="HandheldFriendly" content="True" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="{{meta_description}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{meta_title}}</title>
+	
+	<link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}">
+	<link rel="stylesheet" type="text/css" href="{{asset "css/colorbox.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/clui.css"}}" />
+	
+	{{! Ghost outputs important style and meta data with this tag }}
+	{{ghost_head}}
 </head>
 <body class="{{body_class}}">
 	
 	{{! Everything else gets inserted here }}
-    {{{body}}}
+	{{{body}}}
 	
-    <footer class="container">
-	<div class="row">
-	  <div class="col-md-12">
-		
-            <div class="inner">
-             <section class="copyright">&copy; <a href="/">{{@blog.title}}</a> 2014</section>
-             <section class="poweredby">powered by <a class="icon-ghost" href="http://ghost.org"></a></section>
-            </div>
-		
-	  </div>
-	</div>
-    </footer>
+	<footer class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<section>&copy; <a href="/">{{@blog.title}}</a> 2014</section>
+				<section>powered by <a class="icon-ghost" href="http://ghost.org"></a></section>
+			</div>
+		</div>
+	</footer>
 	
 	{{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
-
-    {{! The main JavaScript file for CLUI }}
-	<script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery.jscroll.min.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery.colorbox-min.js"></script>
-    <script type="text/javascript" src="/assets/js/clui.js"></script>
+	{{ghost_foot}}
+	
+	{{! The main JavaScript file for CLUI }}
+	<script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.jscroll.min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/jquery.colorbox-min.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/clui.js"}}"></script>
 	
 </body>
 </html>

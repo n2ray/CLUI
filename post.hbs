@@ -1,11 +1,7 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
 <style>
 body {padding-top:60px}
-.navbar {opacity:0.93}
 </style>
 
 	{{! Navbar for homepage }}
@@ -20,7 +16,7 @@ body {padding-top:60px}
 <div class="container" role="main">
 	<div class="row">
 	
-    <article class="{{post_class}} col-md-12">
+    <article class="{{post_class}} clui-post col-md-12">
 
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}

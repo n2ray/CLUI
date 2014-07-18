@@ -1,7 +1,6 @@
 /**
  * Main JS file for CLUI
  */
-
 (function ($){
 	"use strict";
 
@@ -32,7 +31,8 @@
 	
 	// Postcover on homepage
 	$.fn.cluiPostCover = function(){
-		var 
+		var
+		thisYear = new Date().getFullYear(),
 		$tagHolder = this.find('.post-header .post-meta a:first-child:not(.hide)'),
 		$picHolder = this.find('div.atcl-pic'),
 		$titleHolder = this.find('.post-title a'),
@@ -60,52 +60,58 @@
 				'background-size':'cover'
 			});
 		}
-		
-		postCoverImg.remove();
-		postCoverIcon.remove();
-	}
 
-	/*globals jQuery, document */
-	$(document).ready(function(){
+		if(this.find('.post-date').text().substr(-4, 4) == thisYear){
+			this.find('.post-date').text(this.find('.post-date').text().substr(1, 7));
+		}
 		
-		// insert Tag name into post navbar
-		//if($('.post-tag').text() != ''){
-		//	$('.navbar-brand-sub').text('/ '+$('.clui-post-tag').text());
-		//};
+		this.find('.post-cover-preholder').remove();
+	}
 	
-		// add Cover to each article in homepage
-		$('article').each(function(){
-			$(this).cluiPostCover();
-		});
+})( jQuery );
+
+/*globals jQuery, document */
+$(document).ready(function(){
 	
-		// jscroll
-		$('.main-content .posts-holder').jscroll({
-			loadingHtml: '<div class="col-md-12 text-center" style="padding:12px 0"><i class="fa fa-cog fa-spin fa-lg"></i></div>',
-			nextSelector: 'a.older-posts',
-			contentSelector: 'div.posts-holder',
-			callback: function(){
-				// move each article to .post-holder
-				$(this).find('article').each(function(){
-					$(this).cluiPostCover();
-					$(this).insertAfter($(this).parent().parent().siblings().filter('article').last());
-					$(this).find('div.atcl-pic h4').css({'width':$(this).width()+12+'px'});
-				});
-			}
-		});
 	
-		// build gallery in post
-		// Lightbox with colorbox
-		if($('.clui-gallery').length > 0){
-			$('.clui-gallery').each(function(){
-				var $box = $(this);
-				$box.cluiPostGallery();
-				$box.find('a').colorbox({rel:'clui-gallery-'+$(this).attr('group'), transition:"fade"});
-				$(window).resize(function(){
-					$box.cluiPostGallery();
-				});
+	// insert Tag name into post navbar
+	//if($('.post-tag').text() != ''){
+	//	$('.navbar-brand-sub').text('/ '+$('.clui-post-tag').text());
+	//};
+
+	// add Cover to each article in homepage
+	$('article').each(function(){
+		$(this).cluiPostCover();
+	});
+
+	// jscroll
+	$('.main-content .posts-holder').jscroll({
+		loadingHtml: '<div class="col-md-12 text-center" style="padding:12px 0"><i class="fa fa-cog fa-spin fa-lg"></i></div>',
+		nextSelector: 'a.older-posts',
+		contentSelector: 'div.posts-holder',
+		callback: function(){
+			// move each article to .post-holder
+			$(this).find('article').each(function(){
+				$(this).cluiPostCover();
+				$(this).insertAfter($(this).parent().parent().siblings().filter('article').last());
+				$(this).find('div.atcl-pic h4').css({'width':$(this).width()+12+'px'});
 			});
 		}
-	
-		$('.jscroll-loading').remove();
 	});
-})( jQuery );
+
+	// build gallery in post
+	// Lightbox with colorbox
+	if($('.clui-gallery').length > 0){
+		$('.clui-gallery').each(function(){
+			var $box = $(this);
+			$box.cluiPostGallery();
+			$box.find('a').colorbox({rel:'clui-gallery-'+$(this).attr('group'), transition:"fade"});
+			$(window).resize(function(){
+				$box.cluiPostGallery();
+			});
+		});
+	}
+
+	$('.jscroll-loading').remove();
+	
+});

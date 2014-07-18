@@ -94,26 +94,49 @@ code, pre code {
 
 /* navbar setting */
 .navbar {
+	background-color: none;
+}
+
+.navbar-default {
+	border: none;
+	background-color: none;
+}
+
+.navbar-in-post {
 	background-color: #E6E6E6;
-	border-color: #E6E6E6;
-	border-color: none;
+	opacity: 0.8;
+}
+
+.navbar-with-cover {
+	position: absolute;
+	height: 500px;
+	top: 0;
+	left: 0;
+	width: 100%;
 	border-radius: 0;
-	border: 0px solid;
 }
-
-.navbar .navbar-header {
-	margin: 20px 0 10px 0;
+.navbar-with-cover .container {
+	background: #333;
+	opacity: 0.9;
 }
-
-.navbar .navbar-header img {
-	height: 23px;
+.navbar-with-cover a,
+.navbar-with-cover .navbar-brand {
+	color: #F5F5F5;
 }
-
-.navbar .navbar-text-home {
-	margin-top: 20px;
+.navbar-with-cover a:hover,
+.navbar-with-cover .navbar-brand:hover {
+	color: #FFFFFF;
 }
 
 /* posts */
+.clui-post-list .post-tag {
+	margin-top: -20px;
+	text-align: center;
+	padding: 5px 0;
+}
+.clui-post-list .post-tag a {
+	color: #666666;
+}
 .post {
 	margin-top: 10px;
 	margin-bottom: 20px;
@@ -143,7 +166,7 @@ h1.post-title a:hover, .post-footer .share a:hover {
     margin: 0 auto;
 }
 
-.post-header .post-meta .post-tag {
+.post-header .post-meta .post-date {
 	background: #E6E6E6;
 	padding: 6px 10px 8px 10px;
 	border-radius: 4px 4px 0 0;
@@ -197,28 +220,25 @@ h1.post-title a:hover, .post-footer .share a:hover {
 	color: #FFFFFF;
 }
 
-.atcl-pic .post-title .post-title-bgl,
-.atcl-pic .post-title .post-title-bgr {
+.atcl-pic .post-title:before {
+	content: '';
+	display: block;
 	width: 6px;
 	height: 6px;
 	position: absolute;
-	top: -16px;
-	-webkit-margin-collapse: separate;
+	top: -6px;
+	left: 0px;
+	background: url(images/post-title-bgl.png) no-repeat 50% 50%;
 }
-
-.atcl-pic .post-title .post-title-bgl {
-	left: 0;
-}
-
-.atcl-pic .post-title .post-title-bgr {
-	right: 0;
-}
-
-.atcl-pic .post-title .post-title-bgl img,
-.atcl-pic .post-title .post-title-bgr img {
+.atcl-pic .post-title:after {
+	content: '';
+	display: block;
 	width: 6px;
 	height: 6px;
-	opacity: .86;
+	position: absolute;
+	top: -6px;
+	right: 0px;
+	background: url(images/post-title-bgr.png) no-repeat 50% 50%;
 }
 
 /* Post Gallery */
