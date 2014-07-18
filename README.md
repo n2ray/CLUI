@@ -16,6 +16,15 @@ You can review the theme live [here](http://cailei.net:3333)
 2. Clone theme repo using below command <br> `git clone https://github.com/n2ray/CLUI.git "clui"`
 3. Restart ghost
 4. On settings page, select "clui" as theme and save.
+5. Blog comment use "DISQUS", please edit "post.hbs" file, change "var disqus_shortname = 'example';" to your shortname.
+
+## Features
+1. Clean homepage 
+2. Post cover on homepage (with image or icon) 
+3. Gallery view in post with lightbox
+
+## Update
+
 
 ## Copyright & License
 
